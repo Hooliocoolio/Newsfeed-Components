@@ -112,3 +112,33 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+/* Creates Content Panel */
+function contentPanel(data) {
+  /* Create Elements */
+  let article = document.createElement("div");
+  let date = document.createElement("p");
+  let title = document.createElement("h2");
+  let firstParagraph = document.createElement("p");
+  let secondParagraph = document.createElement("p");
+  let thirdParagraph = document.createElement("p");
+  let span = document.createElement("span");
+
+  /* Add Classnames  */
+  article.classList.add("article");
+  date.classList.add("date");
+  span.classList.add("expandButton");
+
+  /* Gets the data */
+  title.textContent = data.title;
+  date.textContent = data.date;
+  firstParagraph.textContent = data.firstParagraph;
+  secondParagraph.textContent = data.secondParagraph;
+  thirdParagraph.textContent = data.thirdParagraph;
+  span.textContent = "Read More";
+
+
+  // Add Event Listener to the toggle
+  span.addEventListener("click", (event) => {
+    article.classList.toggle("article-open");
+  });
+
