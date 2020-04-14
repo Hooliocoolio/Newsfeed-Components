@@ -141,4 +141,21 @@ function contentPanel(data) {
   span.addEventListener("click", (event) => {
     article.classList.toggle("article-open");
   });
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(span);
+
+  return article;
+}
+
+//Create new panel for each article
+let articles = document.querySelector(".articles");
+
+data.forEach((panel) => {
+  let newPanel = contentPanel(panel);
+  articles.append(newPanel);
+});
 
